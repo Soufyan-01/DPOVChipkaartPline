@@ -40,8 +40,6 @@ public class OVChipkaartDAOPsql implements OVChipkaartDAO {
     @Override
     public boolean save(OVChipkaart ovChipkaart) {
         try{
-            if(rdao.findById(ovChipkaart.getReiziger().getID())== null)
-                return rdao.save(ovChipkaart.getReiziger());
 
             PreparedStatement st = conn.prepareStatement("INSERT INTO ov_chipkaart(kaart_nummer, geldig_tot, klasse, saldo, reiziger_id) VALUES (?,?,?,?,?)");
 
